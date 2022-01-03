@@ -8,7 +8,11 @@ using Project.Models;
 public interface IStudentNvRepository
 {
     // GetAll Insert, Update, Delete
+    int GetMaxNvNganh();
+    Task<List<Tonghop_nganh>> GetperNganh();
+    Task<List<Tonghop_khoa>> GetperKhoa();
     Task<IEnumerable<StudentNguyenVong>> GetAll();
+
     Task<StudentNguyenVong> GetNguyenVongById(int id);
     Task<List<StudentNguyenVong>> Insert(StudentNguyenVongDtos[] dto, int id);
 

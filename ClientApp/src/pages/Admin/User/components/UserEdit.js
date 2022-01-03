@@ -54,7 +54,6 @@ export default function UserEdit() {
     if (reason === "clickaway") {
       return;
     }
-
     setFail(false);
   };
   return (

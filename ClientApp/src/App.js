@@ -14,6 +14,7 @@ import UserEditPage from "./pages/Admin/User/UserEditPage";
 import UserPage from "./pages/Admin/User/UserPage";
 
 import Home from "./pages/Home/Home";
+import UserEditHoso from "./pages/Home/UserEditHoso/UserEditHoso";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 
@@ -87,6 +88,8 @@ export default function App() {
       <Route path="/register" component={Register} />
 
       <Route path="/" exact component={Home} />
+      {/* <Route path="/edit/:id" exact component={UserEditHoso} /> */}
+
       <Route path="/admin" component={Admin} />
       <Route path="/user" exact component={UserPage} />
       <Route path="/user/edit/:id" component={UserEditPage} />

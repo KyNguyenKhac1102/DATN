@@ -48,7 +48,7 @@ export default function HosoTable() {
     { field: "soDienThoai", headerName: "SĐT", width: 150 },
     { field: "email", headerName: "Email", width: 200 },
     {
-      field: "doiTuongId",
+      field: "maDoiTuong",
       headerName: "Đối tượng",
       width: 250,
       valueGetter: (params) => {
@@ -56,7 +56,7 @@ export default function HosoTable() {
       },
     },
     {
-      field: "khuVucId",
+      field: "maKhuVuc",
       headerName: "Khu vực",
       width: 150,
       valueGetter: (params) => {

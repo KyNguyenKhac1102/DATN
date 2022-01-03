@@ -13,7 +13,7 @@ namespace Project.Models
         public int? Stt_NguyenVong { get; set; }
 
         [ForeignKey("MaNganh")]
-        [JsonIgnore]
+
         public Nganh Nganh { get; set; }
         public string MaNganh { get; set; }
         [ForeignKey("MaToHop")]

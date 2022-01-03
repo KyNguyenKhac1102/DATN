@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.Context;
 
 namespace project.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    partial class ProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20211227134705_IntiCreate15")]
+    partial class IntiCreate15
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -108,9 +110,6 @@ namespace project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Create_At")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("DiaChiHoKhau")
                         .HasMaxLength(100)
@@ -235,9 +234,6 @@ namespace project.Migrations
                     b.Property<int>("TruongLop12Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Update_At")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
@@ -245,19 +241,30 @@ namespace project.Migrations
 
                     b.HasIndex("MaDoiTuong");
 
-                    b.HasIndex("MaKhuVuc");
+                    b.HasIndex("MaKhuVuc")
+                        .IsUnique()
+                        .HasFilter("[MaKhuVuc] IS NOT NULL");
 
-                    b.HasIndex("Tinh10Id");
+                    b.HasIndex("Tinh10Id")
+                        .IsUnique()
+                        .HasFilter("[Tinh10Id] IS NOT NULL");
 
-                    b.HasIndex("Tinh11Id");
+                    b.HasIndex("Tinh11Id")
+                        .IsUnique()
+                        .HasFilter("[Tinh11Id] IS NOT NULL");
 
-                    b.HasIndex("Tinh12Id");
+                    b.HasIndex("Tinh12Id")
+                        .IsUnique()
+                        .HasFilter("[Tinh12Id] IS NOT NULL");
 
-                    b.HasIndex("TruongLop10Id");
+                    b.HasIndex("TruongLop10Id")
+                        .IsUnique();
 
-                    b.HasIndex("TruongLop11Id");
+                    b.HasIndex("TruongLop11Id")
+                        .IsUnique();
 
-                    b.HasIndex("TruongLop12Id");
+                    b.HasIndex("TruongLop12Id")
+                        .IsUnique();
 
                     b.HasIndex("UserId")
                         .IsUnique();

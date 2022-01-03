@@ -2,3 +2,49 @@
   width: auto;
   height: 100vh;
 }
+
+.title-card {
+  font-size: x-large;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+
+  color: white;
+  border-bottom: 3px solid;
+}
+
+.content-card {
+  font-size: xx-large;
+  text-align: center;
+  padding: 5px;
+  color: white;
+}
+
+.container {
+  width: 100%;
+}
+
+.list-nganh {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.spaceout {
+  padding: 2px;
+}
+
+.title-text {
+  font-size: x-large;
+  font-weight: bold;
+  border-bottom: 1px solid;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.container-tonghopper {
+  padding: 20px 40px;
+}
+
+.button-card {
+  text-align: center;
+}

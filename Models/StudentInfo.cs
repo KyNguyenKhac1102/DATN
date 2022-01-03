@@ -128,6 +128,10 @@ namespace Project.Models
         public double DiemTb12 { get; set; }
 
         public double DiemTb_UuTien { get; set; }
+
+        public DateTime Create_At { get; set; }
+        public DateTime Update_At { get; set; }
+
         [ForeignKey("User")]
         public int UserId { get; set; }
         public User User { get; set; }

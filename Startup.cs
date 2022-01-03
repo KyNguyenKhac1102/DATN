@@ -72,7 +72,7 @@ namespace project
             services.AddScoped<ITruongService, TruongService>();
             services.AddScoped<IStudentInfoService, StudentInfoService>();
             services.AddScoped<INganhService, NganhService>();
-
+            services.AddScoped<ITonghopService, TonghopService>();
             services.AddControllersWithViews();
 
 

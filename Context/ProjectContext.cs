@@ -19,6 +19,19 @@ namespace Project.Context
             modelBuilder.Entity<User>().Property(x => x.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<User>().HasIndex(b => b.PhoneNumber).IsUnique();
 
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.MaDoiTuong).IsUnique(false);
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.MaKhuVuc).IsUnique(false);
+
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.Tinh10Id).IsUnique(false);
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.Tinh11Id).IsUnique(false);
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.Tinh12Id).IsUnique(false);
+
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.TruongLop10Id).IsUnique(false);
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.TruongLop11Id).IsUnique(false);
+            modelBuilder.Entity<StudentInfo>().HasIndex(e => e.TruongLop12Id).IsUnique(false);
+
+
+
             modelBuilder.Entity<StudentInfo>().HasMany(s => s.StudentNguyenVongs)
            .WithOne(c => c.StudentInfo).OnDelete(DeleteBehavior.NoAction);
 

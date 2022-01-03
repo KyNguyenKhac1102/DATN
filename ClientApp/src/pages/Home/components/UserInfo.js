@@ -42,27 +42,27 @@ import CustomAC from "../../../components/FormsUI/CustomAutoComplete";
 import axios from "axios";
 import CustomSelectTruong from "../../../components/FormsUI/CusomSelectTruong/CustomSelectTruong";
 import "./UserInfo.css";
+import { useHistory } from "react-router-dom";
 
 const INIT_FORM_STATE = {
-  userId: 5,
-  hoTen: "Nguyễn Văn A",
+  hoTen: "Hoàng Linh Trang",
   ngaySinh: "",
-  gioiTinh: "Nam",
+  gioiTinh: "Nữ",
 
   SoDienThoai: "09841221412",
   SoCCCD: "0011232421412",
-  email: "kynguyenkhac28@gmail.com",
+  email: "linhlu1231@gmail.com",
   diaChiHoKhau: "38 Tương Mai, quận Hai Bà Trưng, Hà Nội",
   MaKhuVuc: "3",
   MaDoiTuong: "00",
 
-  Tinh10Id: "1",
+  Tinh10Id: "58",
   TruongLop10Id: "",
 
-  Tinh11Id: "1",
+  Tinh11Id: "53",
   TruongLop11Id: "",
 
-  Tinh12Id: "1",
+  Tinh12Id: "53",
   TruongLop12Id: "",
 
   diaChiLienHe: "38 Tương Mai, quận Hai Bà Trưng, Hà Nội",
@@ -84,17 +84,18 @@ const INIT_FORM_STATE = {
     },
   ],
 
-  DiemToan10: "1",
-  DiemLy10: "1",
-  DiemHoa10: "1",
+  DiemToan10: "9.6",
+  DiemLy10: "8.6",
+  DiemHoa10: "7.8",
 
-  DiemToan11: "1",
-  DiemLy11: "1",
-  DiemHoa11: "1",
+  DiemToan11: "9.4",
+  DiemLy11: "8.8",
+  DiemHoa11: "9.6",
 
-  DiemToan12: "1",
-  DiemLy12: "1",
-  DiemHoa12: "1",
+  DiemToan12: "8.6",
+  DiemLy12: "9.4",
+  DiemHoa12: "9.4",
+  userId: 23,
 };
 
 const FORM_VALIDATION = yup.object().shape({
@@ -216,6 +217,8 @@ export default function UserInfo() {
   const [statusEmail, setStatusEmail] = useState("");
   const [open, setOpen] = useState(false);
 
+  const history = useHistory();
+
   const handleFileInputChange10 = (e) => {
     const file = e.target.files[0];
 
@@ -249,7 +252,7 @@ export default function UserInfo() {
   };
 
   const handleCheckEmail = (values) => {
-    console.log(values.email);
+    //call rapid api for email checker
     const options = {
       method: "GET",
       url: "https://email-checker.p.rapidapi.com/verify/v1",
@@ -284,6 +287,7 @@ export default function UserInfo() {
       .then((res) => {
         setLoading(false);
         setSuccess(true);
+        // history.push(`/edit/${res.data.id}`);
         console.log("info lưu trong db", res.data);
       })
       .catch((err) => {
@@ -396,8 +400,9 @@ export default function UserInfo() {
               ).then((results) => {
                 // All the resolved promises returned from the map function.
                 console.log("results", results);
-                // uploadToServer(values);
-                handleCheckEmail(values);
+                uploadToServer(values);
+                //when presentation...
+                // handleCheckEmail(values);
               });
 
               // files.map((file, index) => {

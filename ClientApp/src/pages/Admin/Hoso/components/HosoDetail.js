@@ -46,8 +46,8 @@ export default function HosoDetail() {
     soCCCD: "",
     email: "",
     diaChiHoKhau: "",
-    khuVucId: "",
-    doiTuongId: "",
+    maKhuVuc: "",
+    maDoiTuong: "",
 
     tinh10Id: "",
     truongLop10Id: "",
@@ -210,7 +210,7 @@ export default function HosoDetail() {
             width: 200,
           }}
         >
-          Ho So Detail
+          HỒ SƠ CHI TIẾT
         </Typography>
         {/* <Grid container spacing={2}>
                   <Grid item xs={12}>
@@ -229,10 +229,10 @@ export default function HosoDetail() {
             <Typography>Số Điện Thoại: {serverData.soDienThoai}</Typography>
             <Typography>Địa chỉ hộ khẩu: {serverData.diaChiHoKhau}</Typography>
             <Typography>
-              Đối tượng: {doiTuongUuTien[serverData.doiTuongId]}
+              Đối tượng: {doiTuongUuTien[serverData.maDoiTuong]}
             </Typography>
             <Typography>
-              Khu Vực: {khuVucUuTien[serverData.khuVucId]}
+              Khu Vực: {khuVucUuTien[serverData.maKhuVuc]}
             </Typography>
             <div className="title">THÔNG TIN TRƯỜNG</div>
             <Typography>Tỉnh lớp 10: {tinh[serverData.tinh10Id]}</Typography>
